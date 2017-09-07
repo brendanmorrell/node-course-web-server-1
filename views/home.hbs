@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+{{> head}}
+<body>
+<!--need to use curly brace syntax in handlebars for dynamic renders-->
+{{> header}}
+<p>
+<!--when using a helper that will perform on another helper or variable/piece of data in hbs, use the helper and then a space between each piece to be acted upon-->
+{{allCaps welcomeMessage}}
+</p>
+{{> footer}}
+</body>
+</html>
