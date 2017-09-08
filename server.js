@@ -4,6 +4,15 @@ const hbs = require('hbs')
 var expressApp = express();
 const fs = require('fs')
 
+
+//process is a native function (i think), env in the terminal shows all the terminal native computer command variables, and port is the one for the port
+const port = process.env.PORT || 3000;
+expressApp.listen(port, () =>{
+  console.log(`server is listening on port ${port}`);
+});
+
+
+
 hbs.registerPartials(__dirname+'/views/partials')
 //sets hbs as the view engine for all your files run on this server.
 //hbs is a module that helps us set how things look across pages in a dynamic way
@@ -24,7 +33,7 @@ expressApp.use( (req, res, next) => {
   next();
 });
 
-//maintenance page 
+//maintenance page
 /*expressApp.use( (req, res, next) => {
   res.render('maintenance.hbs');
 });*/
@@ -55,13 +64,6 @@ expressApp.get('/about', (req, res) => {
     pageTitle: 'About Page',
   });
 });
-
-
-var port = 3000
-expressApp.listen(port, () =>{
-  console.log(`server is listening on port ${port}`);
-});
-
 
 expressApp.get('/', (req, res) => {
   res.render('home.hbs', {
