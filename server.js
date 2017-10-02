@@ -74,14 +74,14 @@ expressApp.get('/', (req, res) => {
   });
 });
 
-expressApp.get('/projects', (req, res) => {
-  res.render('projects.hbs', {
-    pageTitle: "Projects"
-  });
-});
-
 expressApp.get('/test-page', (req, res) => {
   res.render('testNestedPage.hbs', {
     pageTitle:"Now we have a dynamic page title"
+  });
+});
+
+expressApp.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: "Projects"
   });
 });
